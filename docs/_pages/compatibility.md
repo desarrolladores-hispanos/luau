@@ -105,7 +105,7 @@ La división entre enteros es menos dañina, pero se usa tan pocas veces que `ma
 | implementación nueva de math.random | ✔️ | nuestro generador de números aleatorios está basado en PCG, no como Lua 5.4 el cual utiliza Xoroshiro |
 | argumento opcional `init` de `string.gmatch` | 🤷‍♀️ | no hay usos fuertes |
 | nuevas funciones `lua_resetthread` and `coroutine.close` | ❌ | no son útiles sin las variables a punto de ser eliminadas |
-| coerciónes de cadenas de caracteres a números movidos a la biblioteca de string | 😞 | nos encanta esto, pero rompe la compatibilidad |
+| coerciónes de cadenas de caracteres a números movidas a la biblioteca de string | 😞 | nos encanta esto, pero rompe la compatibilidad |
 | nuevo formato `%p` en `string.format` | 🤷‍♀️ | no hay usos fuertes |
 | biblioteca `utf8` acepta puntos de código de hasta 2^31 | 🤷‍♀️ | no hay usos fuertes |
 | El uso del metamétodo `__lt` para emular el `__le` ha sido eliminado | 😞 | rompe la compatibilidad y no nos parece muy interesante |
