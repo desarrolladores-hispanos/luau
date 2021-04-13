@@ -12,7 +12,7 @@ header:
       url: /why
 
 excerpt: >
-  Lua*u* (minúscula la *u*, /ˈlu.aʊ/) es un lenguaje de programación rápido, pequeño, seguro, y gradualmente tipado que se puede integrar en aplicaciones, derivado de Lua. Es usado por desarrolladores en Roblox para escribir el código de sus juegos, al igual que los ingenieros de Roblox para implementar grandes partes de código para el usuario al igual que porciones del editor (Roblox Studio) como plugins.
+  Lua*u* (minúscula la *u*, /ˈlu.aʊ/) es un lenguaje de programación rápido, pequeño, seguro, y gradualmente tipado que se puede integrar en aplicaciones, derivado de Lua. Es usado por los desarrolladores de Roblox para escribir el código de sus juegos, al igual que los ingenieros de Roblox para implementar grandes partes de código para el usuario al igual que porciones del editor (Roblox Studio) como plugins.
 
 feature_row1:
   - 
