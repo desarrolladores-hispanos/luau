@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.8
   overlay_image: /assets/images/luau-header.png
   actions:
-    - label: Learn More
+    - label: Aprender más
       url: /why
 
 excerpt: >
