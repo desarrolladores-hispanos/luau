@@ -9,7 +9,7 @@ Luau está basado en Lua 5.1, y como tal lleva todas las funciones de 5.1, excep
 Nuestra meta es incluir funciones de versiones más recientes de Lua cuando para nosotros tiene sentido hacerlo - las motivaciones detrás de algunas nuevas funciones no son claras o no aplican al dominio en el que se utiliza Luau, y muchas funciones no valen la pena implementar. El resto de este documento describe el estado de todas las funciones de Lua 5.2 y más allá, con la siguiente clasificación:
 
 - ✔️ - esta función está disponible en Luau
-- ❌ -  esta función no está disponible en Lua porque no creemos que tiene sentido incluirlo
+- ❌ -  esta función no está disponible en Luau porque no creemos que tiene sentido incluirlo
 - 😞 -  esta función no está disponible en Luau por motivos de compatibilidad/seguridad
 - 🔜 - esta función aún no está disponible en Luau pero nos gustaría incluirla y posiblemente estamos trabajando en ella
 - 🤷‍♀️ - esta función aún no está disponible en Luau; no tenemos opiniones concretas sobre ella así que en algún punto la implementaremos
