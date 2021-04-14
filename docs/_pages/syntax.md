@@ -21,13 +21,13 @@ local function tree_insert(tree, x)
 end
 ```
 
-Note que las siguientes versiones de Lua extienden la sintáxis de Lua 5.1 con las siguientes características; Luau does support string literal extensions but does not support other features from this list:
+Note que las siguientes versiones de Lua extienden la sintáxis de Lua 5.1 con las siguientes características; Luau soporta las extensiones de cadenas literales, pero no otras caracteríticas de esta lista:
 
-- hexadecimal (`\x`), Unicode (`\u`) and `\z` escapes for string literals
-- goto statements and labels
-- bitwise operators
-- floor division operator (`//`)
-- `<toclose>` and `<const>` local attributes
+- salidas de cadenas literales para hexadecimal (`\x`), Unicode (`\u`), y `\z`
+- declaración de goto y etiquetas
+- operadores a nivel de bits (bitwise)
+- operador para divisiones redondeadas (`//`)
+- atributos locales `<toclose>` y `<const>` 
 
 > For details please refer to [compatibility section](compatibility).
 
