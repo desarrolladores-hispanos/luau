@@ -59,7 +59,7 @@ Los desafíos de seguridad [se cubren en la sección dedicada](sandbox).
 | metamétodos de orden funcionan con tipos distintos | ❌ | no hay usos fuertes y semánticas más complicadas + compatibilidad |
 | instrucción vacía | 🤷‍♀️ | menos útil en Lua que en JS/C#/C/C++ |
 | instrucción `break` puede aparecer en medio de un bloque | 🤷‍♀️ | nos gustaría hacerlo para return/continue también pero aquí hay dragones |
-| argumentos para funciones llamadas por mediante de `xpcall` | ✔️ | |
+| argumentos para funciones llamadas por medio de `xpcall` | ✔️ | |
 | base opcional en `math.log` | ✔️ | |
 | separador opcional en `string.rep` | 🤷‍♀️ | no hay usos reales |
 | nuevos metamétodos `__pairs` e `__ipairs` | ❌ | nos gustaría reevaluar el diseño de iteración a largo plazo |
