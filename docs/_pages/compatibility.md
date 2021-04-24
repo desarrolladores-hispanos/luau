@@ -12,7 +12,7 @@ Nuestra meta es incluir funciones de versiones más recientes de Lua cuando para
 - ❌ -  esta función no está disponible en Luau porque no creemos que tiene sentido incluirlo
 - 😞 -  esta función no está disponible en Luau por motivos de compatibilidad/seguridad
 - 🔜 - esta función aún no está disponible en Luau pero nos gustaría incluirla y posiblemente estamos trabajando en ella
-- 🤷‍♀️ - esta función aún no está disponible en Luau; no tenemos opiniones concretas sobre ella así que en algún punto la implementaremos
+- 🤷‍♀️ - esta función aún no está disponible en Luau; no tenemos opiniones concretas sobre ella así que en algún momento la implementaremos
 
 Por favor tomen en cuenta que todas estas decisiones no son finales, solo representan nuestra opinión actual. En algunos casos la evolución de nuestra MV (máquina virtual) puede hacer que una función que anteriormente no era práctica de soportar debido a complicaciones de rendimiento, factible. En algunos casos una función que no tenía uso fuerte ahora se gana uno, para nosotros implementarla.
 
@@ -113,6 +113,6 @@ La división entre enteros es menos dañina, pero se usa tan pocas veces que `ma
 | La función print llama `__tostring` en lugar de tostring para formatear sus argumentos. | 🔜 | |
 | Por defecto, las funciones de la biblioteca utf8 para decodificar no aceptan suplantes. | 😞 | romple la compatibilidad y no nos parece muy interesante |
 
-Lua tiene una sintaxis muy bella y francamente estamos decepcionados de la sintaxis `<const>`/`<toclose>` lo cual disminuye esa belleza. Dejando la sintaxis alado, `<toclose>` no es muy útil en Luau - su uso dominante es para código que funciona con recursos externos como archivos o sockets, pero no proporcionamos tales interfaces de programación - y lleva un costo de complejidad muy grande, evidencias por muchas correciones de bugs desde la implementación inicial en versiones de trabajo de 5.4. `<const>` en Luau no importa para el rendimiento - nuestro compilador multipaso ya es capaz de analizar el uso de la variable para saber si está modificada o no y extraer las ganancias de rendimiento - así que el único uso aquí es para la legibilidad de código, donde la sintaxis `<const>` es...subóptima.
+Lua tiene una sintaxis muy bella y francamente estamos decepcionados de la sintaxis `<const>`/`<toclose>` la cual disminuye esa belleza. Dejando la sintaxis alado, `<toclose>` no es muy útil en Luau - su uso dominante es para código que funciona con recursos externos como archivos o sockets, pero no proporcionamos tales interfaces de programación - y lleva un costo de complejidad muy grande, evidencias por muchas correciones de bugs desde la implementación inicial en versiones de trabajo de 5.4. `<const>` en Luau no importa para el rendimiento - nuestro compilador multipaso ya es capaz de analizar el uso de la variable para saber si está modificada o no y extraer las ganancias de rendimiento - así que el único uso aquí es para la legibilidad de código, donde la sintaxis `<const>` es...subóptima.
 
 Si terminamos introduciendo las variables constantes, sería por medio de una sintaxis `const var = valor`, la cual es compatible por medio de una palabra clave sensible al contexto, similar a `type`.
