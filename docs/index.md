@@ -24,7 +24,7 @@ feature_row1:
     btn_class: "btn--primary"
 
   - 
-     title: Seguridad
+    title: Seguridad
     excerpt: >
       Luau limita el set de librerías estándar expuestas a los usuarios e implementa funciones de seguridad extra para ser capaz de ejecutar código no privilegiado (escrito por nuestros desarrolladores) lado por lado con código privilegiado (escrito por nosotros). Esto da como resultado un entorno de ejecución diferente al habitual en Lua.
     url: /sandbox
