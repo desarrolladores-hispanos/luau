@@ -1,36 +1,35 @@
 ---
 permalink: /getting-started
-title: Getting Started
+title: Empezando
 toc: true
 ---
+Para empezar con Luau necesitarás instalar Roblox Studio, el cual puedes descargar [aquí](https://www.roblox.com/create).
 
-To get started with Luau you need to install Roblox Studio, which you can download [here](https://www.roblox.com/create). 
+## Creando un lugar
 
-## Creating a place
-
-If you just want to experiment with the language itself, you can create a simple baseplate game.
+Si solo deseas experimentar con el lenguaje por sí mismo, puedes crear un simple juego baseplate.
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/create-new-place.png">
 </figure>
 
-## Creating a script
+## Creando un script
 
-To create your own testing script, go to ServerScriptService in the explorer tree and add a Script object.
+Para crear tu propio script de prueba, dirigite a ServerScriptService en el explorador y agrega un objeto de Script.
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/create-script.png">
 </figure>
 
-Double-click on the script object and paste this:
+Haga doble click en el script y pegue esto:
 
 ```lua
-function ispositive(x)
+function espositivo(x)
     return x > 0
 end
 
-print(ispositive(1))
-print(ispositive("2"))
+print(espositivo(1))
+print(espositivo("2"))
 
 function isfoo(a)
     return a == "foo"
@@ -40,21 +39,21 @@ print(isfoo("bar"))
 print(isfoo(1))
 ```
 
-Note that there are no warnings about calling ``ispositive()`` with a string, or calling ``isfoo()`` a number. 
+Observa que no hay advertencias llamando ``espositivo()`` con un string, o llamando ``isfoo()`` con un número. 
 
-## Type inference
+## Inferencia de tipos
 
-Now modify the script to include ``--!strict`` at the top:
+Ahora modifica el script y agrega ``--!strict`` arriba del todo:
 
 ```lua
 --!strict
 
-function ispositive(x)
+function espositivo(x)
     return x > 0
 end
 
-print(ispositive(1))
-print(ispositive("2"))
+print(espositivo(1))
+print(espositivo("2"))
 
 function isfoo(a)
     return a == "foo"
@@ -64,96 +63,99 @@ print(isfoo("bar"))
 print(isfoo(1))
 ```
 
-In ``strict`` mode, Luau will infer types based on analysis of the code flow. There is also ``nonstrict`` mode, where analysis is more conservative and types are more frequently inferred as ``any`` to reduce cases where legitimate code is flagged with warnings.
+En el modo ``strict``, Luau inferirá tipos basándose en el análisis del flujo del código. También está el modo ``nonstrict``, en el cual el análisis es más conservativo y los tipos son interferidos más frecuentemente como ``any`` para reducir casos en los cuales código legítimo es marcado con advertencias.
 
-In this case, Luau will use the ``return x > 0`` statement to infer that ``ispositive()`` is a function taking an integer and returning a boolean. Similarly, it will use the ``return a == "foo"`` statement to infer that ``isfoo()`` is a function taking a string and returning a boolean. Note that in both cases, it was not necessary to add any explicit type annotations.
+En este caso, Luau usará la declaración ``return x > 0`` para inferir que ``espositivo()`` 
+es una función que toma un número entero y devuelve un valor boolean. Similarly, usará la declaración ``return a == "foo"`` para inferir que ``isfoo()`` es una función que toma un string y devuelve un valor boolean. Observa que en ambos casos, no fue necesario agregar ningún tipo de anotaciones explícitas.
 
-Based on Luau's type inference, the editor now highlights the incorrect calls to ``ispositive()`` and ``isfoo()``:
+Basado en la inferencia de tipos de Luau, el editor ahora resalta las llamadas incorrectas a ``espositivo()`` y ``isfoo()``:
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/error-ispositive.png">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/error-isfoo.png">
 </figure>
 
-## Annotations
+## Anotaciones
 
-You can add annotations to locals, arguments, and function return types. Among other things, annotations can help enforce that you don't accidentally do something stupid. Here's how we would add annotations to ``ispositive()``:
+Puedes agregar anotaciones a locales, argumentos, y tipos de retorno de funciones. Entre otras cosas, las anotaciones pueden ayudar a que no hagas algo estúpido accidentalmente. Aqui esta como agregaríamos anotaciones a  ``espositivo()``:
 
 ```lua
 --!strict
 
-function ispositive(x : number) : boolean
+function espositivo(x : number) : boolean
     return x > 0
 end
 
-local result : boolean
-result = ispositive(1)
+local resultado : boolean
+resultado = espositivo(1)
 
 ```
 
-Now we've told explicitly told Luau that ``ispositive()`` accepts a number and returns a boolean. This wasn't strictly (pun intended) necessary in this case, because Luau's inference was able to deduce this already. But even in this case, there are advantages to explicit annotations. Imagine that later we decide to change ``ispositive()`` to return a string value:
+Ahora que le hemos dicho explícitamente a Luau que ``espositivo()`` acepta un número y regresa un valor booleano. Esto no era estrictamente necesario en este caso, porque la inferencia de Luau ya pudo deducir esto. Pero aun en este caso, hay ventajas para las anotaciones explícitas. Imaginate que luego decidimos cambiar ``espositivo()`` para que regrese un string.
 
 ```lua
 --!strict
 
-function ispositive(x : number) : boolean
+function espositivo(x : number) : boolean
     if x > 0 then
-        return "yes"
+        return "si"
     else
         return "no"
     end
 end
 
-local result : boolean
-result = ispositive(1)
+local resultado : boolean
+resultado = espositivo(1)
 ```
 
-Oops -- we're returning string values, but we forgot to update the function return type. Since we've told Luau that ``ispositive()`` returns a boolean (and that's how we're using it), the call site isn't flagged as an error. But because the annotation doesn't match our code, we get a warning in the function body itself:
+Uy -- estamos regresando strings, pero nos olvidamos de actualizar el tipo de retorno de la función. Dado que le dijimos a Luau que ``espositivo()`` regresa un valor booleano (y así es como lo estamos usando), el lugar de la llamada no está marcado como error. Pero debido a que la anotación no coincide con nuestro código, recibimos una advertencia en el propio cuerpo de la función:
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/error-ispositive-string.png">
 </figure>
 
-The fix is simple; just change the annotation to declare the return type as a string:
+Repararlo es facil; solo cambia la anotación para declarar el tipo de regreso como un string:
 
 ```lua
 --!strict
 
-function ispositive(x : number) : string
+function espositivo(x : number) : string
     if x > 0 then
-        return "yes"
+        return "si"
     else
         return "no"
     end
 end
 
-local result : boolean
-result = ispositive(1)
+local resultado : boolean
+resultado = espositivo(1)
 ```
 
-Well, almost - since we declared ``result`` as a boolean, the call site is now flagged:
+Bueno, casi  - desde que declaramos ``resultado`` como un valor booleano, el lugar donde lo llamamos ahora está marcado:
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/error-ispositive-boolean.png">
 </figure>
 
-If we update the type of the local variable, everything is good. Note that we could also just let Luau infer the type of ``result`` by changing it to the single line version ``local result = ispositive(1)``.
+
+Si actualizamos el tipo de la variable local, todo está bien. Observa que también podemos dejar que Luau infiera el tipo de ``resultado`` cambiandolo por la versión de solo una línea ``local resultado = espositivo(1)``.
 
 ```lua
 --!strict
 
-function ispositive(x : number) : string
+function espositivo(x : number) : string
     if x > 0 then
-        return "yes"
+        return "si"
     else
         return "no"
     end
 end
 
-local result : string
-result = ispositive(1)
+local resultado : string
+resultado = espositivo(1)
 ```
 
-## Conclusions
+## Conclusiones
 
-This has been a brief tour of the basic functionality of Luau, but there's lots more to explore. If you're interested in reading more, check out our main reference pages for [syntax](syntax) and [typechecking](typecheck).
+Este fue un corto tour de la funcionalidad básica de Luau, pero hay mucho más por explorar. Si estás interesado en leer más, echa un vistazo a nuestras páginas de referencia principales [sintaxis](syntax) y [comprobación de tipos](typecheck).
+
