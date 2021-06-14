@@ -6,6 +6,6 @@ Este repositorio mantiene la documentación para este lenguaje al igual que mate
 
 ---
 ### Localización
-Localizado al Español por [Incapaz](https://github.com/zapacni), [Dvd](https://github.com/Dvd-22), y [Vexot](https://github.com/Vexot). La localización se hizo con fines colaborativos, educativos y sin ánimos de lucro, contribuyendo a la comunidad hispanohablante de desarrolladores de Roblox. Los derechos son reservados a Roblox, Roblox Corporation. 
+Localizado al Español por [Incapaz](https://github.com/zapacni), [Dvd](https://github.com/Dvd-22), y [Vexot](https://github.com/Vexot). La localización se realizó con fines colaborativos, educativos y sin ánimos de lucro, contribuyendo a la comunidad hispanohablante de desarrolladores de Roblox. Los derechos son reservados a Roblox, Roblox Corporation. 
 
 El repositorio original [puede ser encontrado aquí](https://github.com/Roblox/luau)
