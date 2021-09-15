@@ -16,60 +16,60 @@ excerpt: >
 
 feature_row1:
   - 
-    title: Motivation
+    title: Motivación 
     excerpt: >
-      Around 2006, [Roblox](https://www.roblox.com) started using Lua 5.1 as a scripting language for games. Over the years we ended up substantially evolving the implementation and the language; to support growing sophistication of games on the Roblox platform, growing team sizes and large internal teams writing a lot of code for application/editor (1+MLOC as of 2020), we had to invest in performance, ease of use and language tooling, and introduce a gradual type system to the language. 
+      Alrededor de 2006, [Roblox](https://www.roblox.com) comenzó a usar Lua 5.1 como lenguaje de programación para juegos. A través de los años terminamos evolucionando sustancialmente la implementación y el lenguaje; para apoyar la creciente sofisticación de los juegos en la plataforma de Roblox, aumentando el tamaño de los equipos y grandes equipos internos que escriben grandes cantidades de código para la aplicación/el editor (con 1+MLOC en 2020), tuvimos que dedicarnos en el rendimiento, facilidad de uso y herramientas de lenguaje, e introducir un sistema de tipos gradual a el lenguaje.
     url: /why
-    btn_label: Learn More
+    btn_label: Aprender más
     btn_class: "btn--primary"
 
   - 
-    title: Sandboxing
+    title: Seguridad
     excerpt: >
-      Luau limits the set of standard libraries exposed to the users and implements extra sandboxing features to be able to run unprivileged code (written by our game developers) side by side with privileged code (written by us). This results in an execution environment that is different from what is commonplace in Lua. 
+      Luau limita el set de librerías estándar expuestas a los usuarios e implementa funciones de seguridad extra para ser capaz de ejecutar código no privilegiado (escrito por nuestros desarrolladores) codo a codo con código privilegiado (escrito por nosotros). Esto da como resultado un entorno de ejecución diferente al habitual en Lua.
     url: /sandbox
-    btn_label: Learn More
+    btn_label: Aprender más 
     btn_class: "btn--primary"
 
   - 
-    title: Compatibility
+    title: Compatibilidad
     excerpt: >
-      Whenever possible, Luau aims to be backwards-compatible with Lua 5.1 and at the same time to incorporate features from later revisions of Lua. However, Luau is not a full superset of later versions of Lua - we do not agree with some design decisions made by the Lua authors, and have different use cases and constraints. All post-5.1 Lua features, along with their support status in Luau, [are documented here](compatibility).
+     Cuando es posible, Luau aspira a ser compatible con versiones anteriores de Lua 5.1 y al mismo tiempo incorporar funciones de últimas revisiones de Lua. Sin embargo, Luau no es un super conjunto completo de versiones posteriores de Lua - no estamos de acuerdo con algunas decisiones de diseño tomadas por los autores de Lua, y tenemos diferentes casos de uso y limitaciones. Todas las funciones posteriores a Lua 5.1, junto con su estado de soporte en Luau, [están documentadas aquí](compatibility).
     url: /compatibility
-    btn_label: Learn More
+    btn_label: Aprender más
     btn_class: "btn--primary"
 
 feature_row2:
   - 
-    title: Syntax
+    title: Sintaxis
     image_path: /assets/images/example.png
     excerpt: >
-      Luau is syntactically backwards-compatible with Lua 5.1 (code that is valid Lua 5.1 is also valid Luau); however, we have extended the language with a set of syntactical features that make the language more familiar and ergonomic. The syntax [is described here](syntax).
+      Luau es sintácticamente retrocompatible con Lua 5.1 (el código que es válido en Lua 5.1 también es válido en Luau); sin embargo, hemos extendido el lenguaje con un conjunto de funciones sintácticas que hacen el lenguaje más familiar y ergonómico. La sintaxis [es descrita aquí](syntax).
     url: /syntax
-    btn:label: Learn More
+    btn:label: Aprender más
     btn_class: "btn--primary"
 
 feature_row3:
   - 
-    title: Analysis
+    title: Análisis
     excerpt: >
-        To make it easier to write correct code, Luau comes with a set of analysis tools that can surface common mistakes. These consist of a linter and a type checker, colloquially known as script analysis, and can be used from [Roblox Studio](https://developer.roblox.com/en-us/articles/The-Script-Analysis-Tool). The linting passes are [described here](lint), and the type checking user guide can [be found here](typecheck).
+        Para facilitar la escritura de código apropiado, Luau viene con un conjunto de herramientas de análisis que pueden revelar errores comunes. Estas consisten en un linter y un comprobador de tipos, coloquialmente conocido como un analizador de scripts, y puede ser usado desde [Roblox Studio](https://developer.roblox.com/en-us/articles/The-Script-Analysis-Tool). Los pasos de linting [son descritos aquí](lint), y la guía de comprobación de tipos puede [ser encontrada aquí](typecheck).
     url: /typecheck
-    btn_label: Learn More
+    btn_label: Aprender más
     btn_class: "btn--primary"
 
   - 
-    title: Performance
+    title: Rendimiento
     excerpt: >
-        In addition to a completely custom front end that implements parsing, linting and type checking, Luau runtime features new bytecode, interpreter and compiler that are heavily tuned for performance. Luau currently does not implement Just-In-Time compilation, but its interpreter is often competitive with LuaJIT interpreter on a wide set of benchmarks. We continue to optimize the runtime and rewrite portions of it to be even more efficient, including plans for a new garbage collector and further library optimizations, as well as an eventual JIT/AOT option. While our overall goal is to minimize the amount of time programmers spend tuning performance, some details about the performance characteristics are [provided for inquisitive minds](performance).
+        En adición de un front end completamente personalizado que implementa el análisis, linting y comprobación de tipos, el tiempo de ejecución de Luau presenta un nuevo bytecode, interpretador y compilador que son considerablemente ajustados para un mejor rendimiento. Luau actualmente no implementa una compilación JIT (método justo a tiempo), pero su interpretador es frecuentemente competitivo con el interpretador de LuaJIT en un amplio conjunto de puntos de referencia. Continuamos optimizando el tiempo de ejecución y reescribiendo porciones de este para hacerlo aún más eficiente, incluyendo planes de tener un nuevo recolector de basura y más optimizaciones de la librería, al igual que una eventual opción de JIT/AOT. Mientras nuestro objetivo general es minimizar la cantidad de tiempo usada por los programadores para ajustar el rendimiento, algunos detalles acerca de las características del rendimiento son [proveídas para mentes inquisitivas](performance).
     url: /performance
-    btn_label: Learn More
+    btn_label: Aprender más
     btn_class: "btn--primary"
 
   -
-    title: Libraries
+    title: Librerías
     excerpt: >
-        As a language, Luau is a full superset of Lua 5.1. As far as standard library is concerned, some functions had to be removed from the builtin libraries, and some functions had to be added. Additionally, Luau is currently only runnable from the context of the Roblox engine, which exposes a large API surface [documented on Roblox developer portal](https://developer.roblox.com/en-us/api-reference).
+        Como un lenguaje, Luau es un super conjunto completo de Lua 5.1. En lo que respecta a la librería estándar, algunas funciones tuvieron que ser removidas de las librerías integradas, y algunas funciones tuvieron que ser agregadas. Además, actualmente Luau es solamente ejecutable desde el contexto del motor de Roblox, el cual expone una gran superficie del API [documentada en el Roblox developer portal](https://developer.roblox.com/en-us/api-reference).
 
 ---
 
