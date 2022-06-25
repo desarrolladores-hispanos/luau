@@ -1,10 +1,10 @@
 ---
 permalink: /syntax
-title: Syntax
+title: Sintáxis
 toc: true
 ---
 
-Luau uses the baseline [syntax of Lua 5.1](https://www.lua.org/manual/5.1/manual.html#2). For detailed documentation, please refer to the Lua manual, this is an example:
+Luau usa como base la [sintáxis de Lua 5.1](https://www.lua.org/manual/5.1/manual.html#2). Para una documentación detallada, por favor diríjase al manual. Aquí hay un ejemplo:
 
 ```lua
 local function tree_insert(tree, x)
@@ -21,13 +21,13 @@ local function tree_insert(tree, x)
 end
 ```
 
-Note that future versions of Lua extend the Lua 5.1 syntax with the following features; Luau does support string literal extensions but does not support other features from this list:
+Note que las siguientes versiones de Lua extienden la sintáxis de Lua 5.1 con las siguientes características; Luau soporta las extensiones de cadenas literales, pero no otras caracteríticas de esta lista:
 
-- hexadecimal (`\x`), Unicode (`\u`) and `\z` escapes for string literals
-- goto statements and labels
-- bitwise operators
-- floor division operator (`//`)
-- `<toclose>` and `<const>` local attributes
+- salidas de cadenas literales para hexadecimal (`\x`), Unicode (`\u`), y `\z`
+- declaración de goto y etiquetas
+- operadores a nivel de bits (bitwise)
+- operador para divisiones redondeadas (`//`)
+- atributos locales `<toclose>` y `<const>` 
 
 > For details please refer to [compatibility section](compatibility).
 
